@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
   });
   socket.on('list', (users) => {
     List.findOrCreateList(users.user.id, users.receiver.id).then((list) =>
-      socket.emit('priorMessages', list.tasks),
+      socket.emit('priorTasks', list.tasks),
     );
   });
   socket.on('task', ({text, sender, receiver}) => {

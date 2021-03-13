@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, FlatList, Alert} from 'react-native';
-import Header from './app/components/Header';
-import ListItem from './app/components/ListItem';
-import AddItem from './app/components/AddItem';
+import Header from './components/Header';
+import ListItem from './components/ListItem';
+import AddItem from './components/AddItem';
 
 const App = () => {
   const [items, setItems] = useState([
