@@ -7,7 +7,7 @@ const List = db.define('list', {});
 module.exports = List;
 
 List.findOrCreateList = function (user1Id, user2Id) {
-  return List.find({
+  return List.findOne({
     where: {
       user1Id: {
         [Op.or]: [user1Id, user2Id],

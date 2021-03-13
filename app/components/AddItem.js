@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -6,11 +6,17 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+import {openList} from '../redux';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 Icon.loadFont();
 
-const AddItem = ({addItem}) => {
+const AddItem = ({addItem, receiver, user}) => {
   const [text, setText] = useState('');
+
+  useEffect(() => {
+    openList({user: user, receiver: receiver});
+  });
 
   const onChange = (textValue) => setText(textValue);
 
@@ -21,7 +27,9 @@ const AddItem = ({addItem}) => {
         style={styles.input}
         onChangeText={onChange}
       />
-      <TouchableOpacity style={styles.btn} onPress={() => addItem(text)}>
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => addItem({text: text})}>
         <Text style={styles.btnText}>
           <Icon name="plus" size={20} />
           Add Item

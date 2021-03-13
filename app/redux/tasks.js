@@ -6,7 +6,7 @@ const GOT_NEW_TASK = 'GOT_NEW_TASK';
 // ACTION CREATORS
 
 export const gotTasks = (tasks) => ({type: GOT_TASKS, tasks});
-export const gotNewTasks = (task) => ({type: GOT_NEW_TASK, task});
+export const gotNewTask = (task) => ({type: GOT_NEW_TASK, task});
 
 //REDUCER
 

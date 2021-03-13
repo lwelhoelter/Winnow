@@ -23,5 +23,5 @@ Task.createTask = (text, sender, receiver) => {
       },
     }),
     db.models.list.findOrCreateList(sender.id, receiver.id),
-  ]).then(([task, list]) => task.setConversation(list));
+  ]).then(([task, list]) => task.setList(list));
 };
