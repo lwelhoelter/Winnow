@@ -44,12 +44,11 @@ class List extends React.Component {
             <Text>{task.text}</Text>
           </View>
         ))}
-
-        <FlatList
+        {/* <FlatList
           data={this.state.taskList}
           renderItem={({task}) => <Text>{task}</Text>}
           keyExtractor={(task) => task.id}
-        />
+        /> */}
       </View>
     );
   }

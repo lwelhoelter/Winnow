@@ -1,5 +1,3 @@
-// const app = require('http');
-// const server = app.createServer.listen(3000);
 const server = require('http').createServer().listen(3000);
 
 const db = require('./models').db;
